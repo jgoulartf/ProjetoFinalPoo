@@ -1,7 +1,6 @@
 package br.com.informatica.model;
 
 public class Equipamento {
-    // Associations
     // Attributes
     private String nome;
     private double peso;

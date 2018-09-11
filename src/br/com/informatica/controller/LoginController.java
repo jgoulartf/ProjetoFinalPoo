@@ -25,13 +25,11 @@ public class LoginController {
             MainApp.changePanel("../view/FXMLHome.fxml", MainApp.getWidthScreen(), MainApp.getHeightScreen());
         }
         else {
-
             Alert dialogoErro = new Alert(Alert.AlertType.ERROR);
             dialogoErro.setTitle("ERRO");
             dialogoErro.setHeaderText(null);
             dialogoErro.setContentText("NOME DE USUARIO OU SENHA ERRADO(S)");
             dialogoErro.show();
-            System.out.println("ERROU");
         }
      }
 

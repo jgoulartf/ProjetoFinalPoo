@@ -52,7 +52,7 @@
                               <Image url="@../../../../../assets/icons8-sair-52.png" />
                            </image>
                         </ImageView>
-                        <JFXButton alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" layoutX="166.0" layoutY="18.0" prefHeight="37.0" prefWidth="31.0" text="Sair" textFill="#626f83fa" AnchorPane.rightAnchor="3.0">
+                        <JFXButton alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" layoutX="169.0" layoutY="23.0" prefHeight="32.0" prefWidth="22.0" textFill="#626f83fa" AnchorPane.rightAnchor="7.0">
                            <font>
                               <Font size="10.0" />
                            </font>
@@ -96,7 +96,7 @@
                   <Font size="16.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="224.0" layoutY="83.0" prefHeight="32.0" prefWidth="31.0">
+            <JFXButton layoutX="229.0" layoutY="84.0" prefHeight="32.0" prefWidth="22.0">
                <font>
                   <Font size="1.0" />
                </font>
@@ -113,7 +113,7 @@
                   <Image url="@../../../../../assets/icons8-add-shopping-cart-96.png" />
                </image>
             </ImageView>
-            <JFXButton layoutX="595.0" layoutY="73.0" prefHeight="32.0" prefWidth="31.0" AnchorPane.rightAnchor="8.0">
+            <JFXButton layoutX="595.0" layoutY="73.0" prefHeight="32.0" prefWidth="22.0" AnchorPane.rightAnchor="8.0">
                <font>
                   <Font size="1.0" />
                </font>
