@@ -5,6 +5,12 @@ public class Responsavel extends Pessoa {
     private String telefone;
     private Equipamento equipamentoResponsavel;
 
+    public Responsavel(String nome, String endereco, String telefone, Equipamento equipamentoResponsavel) {
+        super(nome, endereco);
+        this.telefone = telefone;
+        this.equipamentoResponsavel = equipamentoResponsavel;
+    }
+
     // Operations
     public String getTelefone() {
         return telefone;

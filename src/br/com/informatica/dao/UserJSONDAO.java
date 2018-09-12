@@ -8,12 +8,12 @@ import java.util.List;
 
 public class UserJSONDAO implements UserDAO {
     @Override
-    public ArrayList<Cliente> load() {
+    public ArrayList<User> load() {
         return null;
     }
 
     @Override
-    public void store(ListJsonDAO<Cliente> list) {
+    public void store(ListJsonDAO<User> list) {
 
     }
 

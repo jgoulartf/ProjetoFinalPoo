@@ -1,6 +1,7 @@
 package br.com.informatica.dao;
 
 import br.com.informatica.model.Cliente;
+import br.com.informatica.model.Equipamento;
 import com.google.gson.Gson;
 
 import java.io.BufferedReader;
@@ -13,10 +14,10 @@ import java.util.List;
 public class EquipamentoJSONDAO implements EquipamentoDAO {
 
     private Gson gson = new Gson();
-    private ListJsonDAO listJsonEquipamento = new ListJsonDAO();
+    private ListJsonDAO<Equipamento> listJsonEquipamento = new ListJsonDAO();
 
     @Override
-    public ArrayList<Cliente> load() throws Exception {
+    public ArrayList<Equipamento> load() throws Exception {
 
         String fileJson = "/home/jglord/IdeaProjects/ProjetoFinalPoo/src/br/com/informatica/data/clientes.json";
 
@@ -28,12 +29,12 @@ public class EquipamentoJSONDAO implements EquipamentoDAO {
     }
 
     @Override
-    public void store(ListJsonDAO<Cliente> list) {
+    public void store(ListJsonDAO<Equipamento> list) {
 
         String json = gson.toJson(list);
         try {
             //Escreve Json convertido em arquivo chamado "file.json"
-            FileWriter writer = new FileWriter("/home/jglord/IdeaProjects/ProjetoFinalPoo/src/br/com/informatica/data/clientes.json");
+            FileWriter writer = new FileWriter("/home/jglord/IdeaProjects/ProjetoFinalPoo/src/br/com/informatica/data/equipamentos.json");
             writer.write(json);
             writer.close();
 

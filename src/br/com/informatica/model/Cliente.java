@@ -4,6 +4,12 @@ public class Cliente extends Pessoa {
     // Attributes
     private String cpf;
 
+
+    public Cliente(String nome, String endereco, String cpf) {
+        super(nome, endereco);
+        setCpf(cpf);
+    }
+
     // Operations
     public final boolean comprarEquipamento (Equipamento equipamento) {
         return true;
@@ -21,5 +27,11 @@ public class Cliente extends Pessoa {
         else {
             this.cpf = "Formato invalido ao cadastrar";
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Nome: " + this.getNome() +
+                " | CPF: " + cpf + "\n";
     }
 }

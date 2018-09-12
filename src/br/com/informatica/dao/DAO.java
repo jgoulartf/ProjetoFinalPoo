@@ -1,15 +1,14 @@
 package br.com.informatica.dao;
 
-import br.com.informatica.model.Cliente;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public interface DAO<T> {
 
-    public ArrayList<Cliente> load() throws Exception;
+    public ArrayList<T> load() throws Exception;
 
-    public void store(ListJsonDAO<Cliente> list);
+    public void store(ListJsonDAO<T> list);
 
     public List filter(String filtro);
 

@@ -5,6 +5,11 @@ public abstract class Pessoa {
     private String nome;
     private String endereco;
 
+    public Pessoa(String nome, String endereco) {
+        setNome(nome);
+        setEndereco(endereco);
+    }
+
     public String getNome() {
         return nome;
     }
@@ -19,5 +24,13 @@ public abstract class Pessoa {
 
     public void setEndereco(String endereco) {
         this.endereco = endereco;
+    }
+
+    @Override
+    public String toString() {
+        return "Pessoa{" +
+                "nome='" + nome + '\'' +
+                ", endereco='" + endereco + '\'' +
+                '}';
     }
 }
