@@ -1,17 +1,19 @@
 package br.com.informatica.dao;
 
-import br.com.informatica.model.User;
+import br.com.informatica.model.Cliente;
+import br.com.informatica.model.Responsavel;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class UserXMLDAO implements UserDAO {
+public class ResponsavelJSONDAO implements ResponsavelDAO {
     @Override
-    public List<User> load() {
+    public ArrayList<Cliente> load() {
         return null;
     }
 
     @Override
-    public void store(List<User> list) {
+    public void store(ListJsonDAO<Cliente> list) {
 
     }
 

@@ -22,7 +22,7 @@ public class LoginController {
 
         // Delegando a tarefa de autenticar para o LoginModel
         if( loginModel.autenticar(JFXUsernameLogin.getText(), JFXPasswordLogin.getText())) {
-            MainApp.changePanel("../view/FXMLHome.fxml", MainApp.getWidthScreen(), MainApp.getHeightScreen());
+            MainApp.changePanel("../view/FXMLCaixa.fxml", MainApp.getWidthScreen(), MainApp.getHeightScreen());
         }
         else {
             Alert dialogoErro = new Alert(Alert.AlertType.ERROR);

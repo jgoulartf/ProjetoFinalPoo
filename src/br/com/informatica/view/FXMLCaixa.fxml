@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="452.0" prefWidth="848.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.informatica.controller.CaixaController">
+   <children>
+      <AnchorPane layoutY="73.0" prefHeight="379.0" prefWidth="200.0">
+         <children>
+            <JFXButton fx:id="changePanelCaixa" alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="2.0" prefHeight="48.0" prefWidth="200.0" style="-fx-background-color: #d1d2d3;" text="Caixa" textFill="#ff6302" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="8.0">
+               <font>
+                  <Font name="Roboto Mono for Powerline" size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="changePanelClientes" alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="54.0" onAction="#setChangePanelCliente" prefHeight="48.0" prefWidth="200.0" style="-fx-background-color: #d1d2d3;" text="Clientes" textAlignment="JUSTIFY" textFill="#5c89ce" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="64.0">
+               <font>
+                  <Font name="Roboto Mono for Powerline" size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="changePanelEstoque" alignment="CENTER" contentDisplay="CENTER" layoutX="6.0" layoutY="120.0" onAction="#setChangePanelEstoque" prefHeight="48.0" prefWidth="200.0" style="-fx-background-color: #d1d2d3;" text="Estoque" textFill="#5c89ce" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="120.0">
+               <font>
+                  <Font name="Roboto Mono for Powerline" size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="ChangePanelResponsavel" alignment="CENTER" contentDisplay="CENTER" layoutX="8.0" layoutY="162.0" onAction="#setChangePanelResponsavel" prefHeight="48.0" prefWidth="200.0" style="-fx-background-color: #d1d2d3;" text="Responsável" textFill="#5c89ce" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="176.0">
+               <font>
+                  <Font name="Roboto Mono for Powerline" size="16.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="-8.0" prefHeight="66.0" prefWidth="260.0">
+         <children>
+            <JFXToolbar layoutX="7.0" layoutY="-5.0" prefHeight="76.0" prefWidth="848.0" style="-fx-background-color: FFFFFF;">
+               <left>
+                  <ImageView fitHeight="66.0" fitWidth="194.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                     <image>
+                        <Image url="@../../../../../assets/LOGO.jpg" />
+                     </image>
+                  </ImageView>
+               </left>
+               <right>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <ImageView fitHeight="22.0" fitWidth="31.0" layoutX="166.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="8.0">
+                           <image>
+                              <Image url="@../../../../../assets/icons8-sair-52.png" />
+                           </image>
+                        </ImageView>
+                        <JFXButton alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" layoutX="169.0" layoutY="23.0" prefHeight="32.0" prefWidth="22.0" textFill="#626f83fa" AnchorPane.rightAnchor="7.0">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+               </right>
+            </JFXToolbar>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="208.0" layoutY="73.0" prefHeight="379.0" prefWidth="640.0">
+         <children>
+            <Text fill="#5c89ce" layoutX="8.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Produtos" AnchorPane.bottomAnchor="336.140625" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="516.78125" AnchorPane.topAnchor="13.859375">
+               <font>
+                  <Font name="Roboto Mono for Powerline" size="24.0" />
+               </font>
+            </Text>
+            <JFXTextField fx:id="searchProduct" focusColor="#5c89ce" layoutX="8.0" layoutY="42.0" prefHeight="40.0" prefWidth="213.0" promptText="Pesquisar..." unFocusColor="#bccce5" AnchorPane.leftAnchor="8.0" AnchorPane.topAnchor="42.0">
+               <font>
+                  <Font name="Roboto Mono for Powerline" size="16.0" />
+               </font>
+            </JFXTextField>
+            <ImageView fitHeight="26.0" fitWidth="22.0" layoutX="229.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="229.0">
+               <image>
+                  <Image url="@../../../../../assets/icons8-search-96.png" />
+               </image>
+            </ImageView>
+            <JFXListView fx:id="listViewProducts" layoutX="8.0" layoutY="97.0" prefHeight="269.0" prefWidth="246.0" AnchorPane.leftAnchor="8.0" AnchorPane.topAnchor="97.0" />
+            <JFXTextField fx:id="textFieldQuant" focusColor="#5c89ce" layoutX="499.0" layoutY="56.0" prefHeight="37.0" prefWidth="99.0" promptText="Quantidade" unFocusColor="#bccce5" AnchorPane.leftAnchor="499.0" AnchorPane.rightAnchor="42.0" AnchorPane.topAnchor="56.0">
+               <font>
+                  <Font name="Roboto Mono for Powerline" size="16.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton alignment="CENTER" buttonType="RAISED" layoutX="509.0" layoutY="333.0" prefHeight="32.0" prefWidth="123.0" style="-fx-background-color: #d1d2d3;" text="Finalizar" textFill="#5c89ce" AnchorPane.topAnchor="332.0">
+               <font>
+                  <Font name="Roboto Mono for Powerline" size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="229.0" layoutY="58.0" prefHeight="32.0" prefWidth="22.0">
+               <font>
+                  <Font size="1.0" />
+               </font>
+            </JFXButton>
+            <JFXTextArea fx:id="textAreaProduct" disable="true" focusColor="#5c89ce" layoutX="287.0" layoutY="54.0" prefHeight="40.0" prefWidth="200.0" promptText="Produto..." unFocusColor="#bccce5" AnchorPane.leftAnchor="286.0" />
+            <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="287.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="286.0">
+               <image>
+                  <Image url="@../../../../../assets/icons8-shopping-cart-96.png" />
+               </image>
+            </ImageView>
+            <Line endX="250.0" layoutX="196.0" layoutY="192.0" opacity="0.37" rotate="90.0" startX="-100.0" strokeWidth="0.5" AnchorPane.leftAnchor="95.5" />
+            <ImageView fitHeight="22.0" fitWidth="31.0" layoutX="604.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="66.0">
+               <image>
+                  <Image url="@../../../../../assets/icons8-add-shopping-cart-96.png" />
+               </image>
+            </ImageView>
+            <JFXButton layoutX="604.0" layoutY="66.0" prefHeight="22.0" prefWidth="22.0" AnchorPane.bottomAnchor="291.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="66.0">
+               <font>
+                  <Font size="1.0" />
+               </font>
+            </JFXButton>
+            <JFXListView fx:id="listViewProductsBuy" layoutX="293.0" layoutY="108.0" prefHeight="216.0" prefWidth="346.0" AnchorPane.leftAnchor="286.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="108.0" />
+         </children>
+      </AnchorPane>
+      <Line disable="true" endX="380.0" layoutX="13.0" layoutY="262.0" opacity="0.37" rotate="90.0" />
+   </children>
+</AnchorPane>

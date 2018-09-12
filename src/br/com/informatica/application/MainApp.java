@@ -1,5 +1,8 @@
 package br.com.informatica.application;
 
+import br.com.informatica.dao.ClienteJSONDAO;
+import br.com.informatica.dao.ListJsonDAO;
+import br.com.informatica.model.Cliente;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.LoadException;
@@ -9,6 +12,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class MainApp extends Application {
 
@@ -18,8 +23,8 @@ public class MainApp extends Application {
 
     @Override
     public void start(Stage mainStage) throws Exception {
-
         MainApp.currentStage = mainStage;
+
         MainApp.changePanel("../view/FXMLLogin.fxml", MainApp.WIDTH_SCREEN, MainApp.HEIGHT_SCREEN);
     }
 

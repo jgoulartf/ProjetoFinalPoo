@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="452.0" prefWidth="848.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.informatica.controller.EstoqueController">
+   <children>
+      <AnchorPane layoutY="73.0" prefHeight="379.0" prefWidth="200.0">
+         <children>
+            <JFXButton fx:id="changePanelCaixa" alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="2.0" onAction="#setChangePanelCaixa" prefHeight="48.0" prefWidth="200.0" style="-fx-background-color: #d1d2d3;" text="Caixa" textFill="#5c89ce" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="8.0">
+               <font>
+                  <Font name="Roboto Mono for Powerline" size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="changePanelClientes" alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="54.0" onAction="#setChangePanelCliente" prefHeight="48.0" prefWidth="200.0" style="-fx-background-color: #d1d2d3;" text="Clientes" textAlignment="JUSTIFY" textFill="#5c89ce" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="64.0">
+               <font>
+                  <Font name="Roboto Mono for Powerline" size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="changePanelEstoque" alignment="CENTER" contentDisplay="CENTER" layoutX="6.0" layoutY="120.0" prefHeight="48.0" prefWidth="200.0" style="-fx-background-color: #d1d2d3;" text="Estoque" textFill="#ff6302" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="120.0">
+               <font>
+                  <Font name="Roboto Mono for Powerline" size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="ChangePanelResponsavel" alignment="CENTER" contentDisplay="CENTER" layoutX="49.0" layoutY="203.0" onAction="#setChangePanelResponsavel" prefHeight="48.0" prefWidth="200.0" style="-fx-background-color: #d1d2d3;" text="Responsável" textFill="#5c89ce" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="176.0">
+               <font>
+                  <Font name="Roboto Mono for Powerline" size="16.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="-8.0" prefHeight="66.0" prefWidth="260.0">
+         <children>
+            <JFXToolbar layoutX="7.0" layoutY="-5.0" prefHeight="76.0" prefWidth="848.0" style="-fx-background-color: FFFFFF;">
+               <left>
+                  <ImageView fitHeight="66.0" fitWidth="194.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                     <image>
+                        <Image url="@../../../../../assets/LOGO.jpg" />
+                     </image>
+                  </ImageView>
+               </left>
+               <right>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <ImageView fitHeight="22.0" fitWidth="31.0" layoutX="166.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="8.0">
+                           <image>
+                              <Image url="@../../../../../assets/icons8-sair-52.png" />
+                           </image>
+                        </ImageView>
+                        <JFXButton alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" layoutX="169.0" layoutY="22.0" prefHeight="32.0" prefWidth="22.0" text="Sair" textFill="#626f83fa" AnchorPane.rightAnchor="7.0">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+               </right>
+            </JFXToolbar>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="208.0" layoutY="73.0" prefHeight="379.0" prefWidth="640.0">
+         <children>
+            <Text fill="#5c89ce" layoutX="14.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Equipamentos" AnchorPane.bottomAnchor="334.140625" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="510.78125">
+               <font>
+                  <Font name="Roboto Mono for Powerline" size="24.0" />
+               </font>
+            </Text>
+            <JFXTextField focusColor="#5c89ce" layoutX="14.0" layoutY="43.0" prefHeight="40.0" prefWidth="213.0" promptText="Pesquisar..." unFocusColor="#bccce5" AnchorPane.leftAnchor="8.0">
+               <font>
+                  <Font name="Roboto Mono for Powerline" size="16.0" />
+               </font>
+            </JFXTextField>
+            <ImageView fitHeight="26.0" fitWidth="22.0" layoutX="231.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="231.0">
+               <image>
+                  <Image url="@../../../../../assets/icons8-search-96.png" />
+               </image>
+            </ImageView>
+            <JFXListView layoutX="14.0" layoutY="98.0" prefHeight="269.0" prefWidth="246.0" AnchorPane.leftAnchor="8.0" />
+            <JFXButton alignment="CENTER" buttonType="RAISED" layoutX="517.0" layoutY="333.0" prefHeight="32.0" prefWidth="115.0" style="-fx-background-color: #d1d2d3;" text="Cadastrar" textFill="#5c89ce">
+               <font>
+                  <Font name="Roboto Mono for Powerline" size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="231.0" layoutY="63.0" prefHeight="28.0" prefWidth="22.0">
+               <font>
+                  <Font size="1.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="283.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="286.0">
+               <image>
+                  <Image url="@../../../../../assets/icons8-vários-dispositivos-96.png" />
+               </image>
+            </ImageView>
+            <Line endX="250.0" layoutX="196.0" layoutY="192.0" opacity="0.37" rotate="90.0" startX="-100.0" strokeWidth="0.5" AnchorPane.bottomAnchor="186.5" AnchorPane.leftAnchor="95.5" AnchorPane.rightAnchor="193.5" AnchorPane.topAnchor="191.5" />
+            <JFXTextField focusColor="#5c89ce" layoutX="283.0" layoutY="57.0" prefHeight="40.0" prefWidth="156.0" promptText="Nome" unFocusColor="#bccce5" AnchorPane.leftAnchor="286.0" AnchorPane.topAnchor="59.0">
+               <font>
+                  <Font name="Roboto Mono for Powerline" size="16.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField focusColor="#5c89ce" layoutX="283.0" layoutY="99.0" prefHeight="40.0" prefWidth="156.0" promptText="Peso" unFocusColor="#bccce5" AnchorPane.leftAnchor="286.0" AnchorPane.topAnchor="99.0">
+               <font>
+                  <Font name="Roboto Mono for Powerline" size="16.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField focusColor="#5c89ce" layoutX="283.0" layoutY="139.0" prefHeight="40.0" prefWidth="156.0" promptText="Preço" unFocusColor="#bccce5" AnchorPane.leftAnchor="286.0" AnchorPane.topAnchor="139.0">
+               <font>
+                  <Font name="Roboto Mono for Powerline" size="16.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField focusColor="#5c89ce" layoutX="286.0" layoutY="179.0" prefHeight="40.0" prefWidth="156.0" promptText="Quantidade" unFocusColor="#bccce5">
+               <font>
+                  <Font name="Roboto Mono for Powerline" size="16.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField focusColor="#5c89ce" layoutX="455.0" layoutY="59.0" prefHeight="40.0" prefWidth="156.0" promptText="Número de série" unFocusColor="#bccce5" AnchorPane.topAnchor="59.0">
+               <font>
+                  <Font name="Roboto Mono for Powerline" size="16.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField focusColor="#5c89ce" layoutX="455.0" layoutY="99.0" prefHeight="40.0" prefWidth="156.0" promptText="Local" unFocusColor="#bccce5" AnchorPane.topAnchor="99.0">
+               <font>
+                  <Font name="Roboto Mono for Powerline" size="16.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField focusColor="#5c89ce" layoutX="455.0" layoutY="139.0" prefHeight="40.0" prefWidth="156.0" promptText="Responsável" unFocusColor="#bccce5" AnchorPane.topAnchor="139.0">
+               <font>
+                  <Font name="Roboto Mono for Powerline" size="16.0" />
+               </font>
+            </JFXTextField>
+         </children>
+      </AnchorPane>
+      <Line fx:id="linhazinha2" disable="true" endX="380.0" layoutX="13.0" layoutY="262.0" opacity="0.37" rotate="90.0" />
+   </children>
+</AnchorPane>
