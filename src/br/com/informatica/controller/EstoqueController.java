@@ -9,7 +9,6 @@ import br.com.informatica.model.Local;
 import br.com.informatica.model.Responsavel;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTextField;
-import javafx.beans.property.DoubleProperty;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -48,7 +47,6 @@ public class EstoqueController implements Initializable {
     private StringConverter<Double> doubleToString = new DoubleStringConverter();
     private StringConverter<Integer> integerToString = new IntegerStringConverter();
 
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         try{
@@ -62,7 +60,6 @@ public class EstoqueController implements Initializable {
             bindListView(newValue);
         });
     }
-
 
     private void loadListView(boolean filter){
         List<Equipamento> equipamentos;
@@ -78,10 +75,10 @@ public class EstoqueController implements Initializable {
     private void bindListView(Equipamento e) {
         if(e != null) {
             tfNome.textProperty().bindBidirectional(e.nomeProperty());
-            tfPeso.textProperty().bindBidirectional(e.pesoProperty(), numberToString);
-            tfPreco.textProperty().bindBidirectional(e.precoProperty(), numberToString);
-            tfQuantidade.textProperty().bindBidirectional(e.quantidadeProperty(), numberToString);
-            tfNumeroDeSerie.textProperty().bindBidirectional(e.numeroDeSerieProperty(), numberToString);
+            tfPeso.textProperty().bindBidirectional(e.pesoProperty());
+            tfPreco.textProperty().bindBidirectional(e.precoProperty());
+            tfQuantidade.textProperty().bindBidirectional(e.quantidadeProperty());
+            tfNumeroDeSerie.textProperty().bindBidirectional(e.numeroDeSerieProperty());
         }
 
     }
@@ -144,18 +141,12 @@ public class EstoqueController implements Initializable {
 
     private Equipamento passFieldsValues() {
         // Gerando o novo equipamento, sem os campos local e responsavel.
+        Responsavel responsavel = new Responsavel("Joao", "Vingt-Rosado", "(84) 99692-5674");
+        Local local = new Local(123, 456);
 
-        String nome = tfNome.getText();
-        Double peso = doubleToString.fromString(tfPeso.getText());
-        Double preco = doubleToString.fromString(tfPreco.getText());
-        Integer quantidade = integerToString.fromString(tfQuantidade.getText());
-        Integer numeroDeSerie = integerToString.fromString(tfNumeroDeSerie.getText());
 
-        Equipamento e = new Equipamento();
-        //System.out.println("NOME: " + e.getNome());
-
-        return e;
-
+        return new Equipamento(dao.generateId(), tfNome.getText(), tfPeso.getText(),
+                tfPreco.getText(), tfQuantidade.getText(), tfNumeroDeSerie.getText(), local, responsavel);
     }
 
     private void resetFieldsValues() {

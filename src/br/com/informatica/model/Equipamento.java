@@ -1,46 +1,34 @@
 package br.com.informatica.model;
 
-import javafx.beans.property.DoubleProperty;
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.*;
 
 public class Equipamento {
     // Attributes
     private int id;
-    private StringProperty nome;
-    private DoubleProperty peso;
-    private DoubleProperty preco;
-    private IntegerProperty quantidade;
-    private IntegerProperty numeroDeSerie;
+    private StringProperty nome = new SimpleStringProperty();
+    private StringProperty peso = new SimpleStringProperty();
+    private StringProperty preco = new SimpleStringProperty();
+    private StringProperty quantidade = new SimpleStringProperty();
+    private StringProperty numeroDeSerie = new SimpleStringProperty();
     private Local local;
     private Responsavel responsavel;
 
     public Equipamento(){}
 
-    public Equipamento(int id, String nome, Double peso, Double preco,
-                       Integer quantidade, Integer numeroDeSerie, Local local, Responsavel responsavel)
-    {
-        this.setNome(nome);
-        this.setPeso(peso);
-        this.setPreco(preco);
-        this.setQuantidade(quantidade);
-        this.setNumeroDeSerie(numeroDeSerie);
-        this.setLocal(local);
-        this.setResponsavel(responsavel);
-    }
-
-    public Equipamento(String nome) {
+    public Equipamento(int id, String nome, String peso, String preco, String quantidade, String numeroDeSerie, Local local, Responsavel responsavel) {
+        setId(id);
         setNome(nome);
+        setPeso(peso);
+        setPreco(preco);
+        setQuantidade(quantidade);
+        setNumeroDeSerie(numeroDeSerie);
+        this.local = local;
+        this.responsavel = responsavel;
     }
 
-    public Equipamento(int id, String nome, Double peso, Double preco,
-                       Integer quantidade, Integer numeroDeSerie)
-    {
-        this.setNome(nome);
-        this.setPeso(peso);
-        this.setPreco(preco);
-        this.setQuantidade(quantidade);
-        this.setNumeroDeSerie(numeroDeSerie);
+    public Equipamento(int id, String nome) {
+        setId(id);
+        setNome(nome);
     }
 
     public int getId() {
@@ -63,51 +51,51 @@ public class Equipamento {
         this.nome.set(nome);
     }
 
-    public double getPeso() {
+    public String getPeso() {
         return peso.get();
     }
 
-    public DoubleProperty pesoProperty() {
+    public StringProperty pesoProperty() {
         return peso;
     }
 
-    public void setPeso(double peso) {
+    public void setPeso(String peso) {
         this.peso.set(peso);
     }
 
-    public double getPreco() {
+    public String getPreco() {
         return preco.get();
     }
 
-    public DoubleProperty precoProperty() {
+    public StringProperty precoProperty() {
         return preco;
     }
 
-    public void setPreco(double preco) {
+    public void setPreco(String preco) {
         this.preco.set(preco);
     }
 
-    public int getQuantidade() {
+    public String getQuantidade() {
         return quantidade.get();
     }
 
-    public IntegerProperty quantidadeProperty() {
+    public StringProperty quantidadeProperty() {
         return quantidade;
     }
 
-    public void setQuantidade(int quantidade) {
+    public void setQuantidade(String quantidade) {
         this.quantidade.set(quantidade);
     }
 
-    public int getNumeroDeSerie() {
+    public String getNumeroDeSerie() {
         return numeroDeSerie.get();
     }
 
-    public IntegerProperty numeroDeSerieProperty() {
+    public StringProperty numeroDeSerieProperty() {
         return numeroDeSerie;
     }
 
-    public void setNumeroDeSerie(int numeroDeSerie) {
+    public void setNumeroDeSerie(String numeroDeSerie) {
         this.numeroDeSerie.set(numeroDeSerie);
     }
 

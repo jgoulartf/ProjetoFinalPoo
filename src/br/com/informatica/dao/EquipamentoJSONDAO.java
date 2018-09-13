@@ -28,7 +28,7 @@ public class EquipamentoJSONDAO implements EquipamentoDAO {
         List<Equipamento> equipamentos = new ArrayList<Equipamento>();
         try {
             Type listEquipamentoType = new TypeToken<List<Equipamento>>(){}.getType();
-            equipamentos = gson.fromJson( Files.newBufferedReader(STORAGE_FILE),listEquipamentoType );
+            equipamentos = gson.fromJson(Files.newBufferedReader(STORAGE_FILE), listEquipamentoType);
         }catch (Exception e){
             throw new DAOException(e);
         }
