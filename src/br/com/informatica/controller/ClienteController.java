@@ -83,12 +83,12 @@ public class ClienteController implements Initializable {
     @FXML
     public void cadastrarCliente() {
 
-            List<Cliente> clientes = dao.load();
-            clientes.add( passFieldsValues() );
+        List<Cliente> clientes = dao.load();
+        clientes.add( passFieldsValues() );
 
-            dao.store(clientes);
-            resetFieldsValues();
-            loadListView(false);
+        dao.store(clientes);
+        resetFieldsValues();
+        loadListView(false);
     }
 
     @FXML
@@ -105,9 +105,7 @@ public class ClienteController implements Initializable {
     }
 
     public void sair() throws Exception {
-
         MainApp.changePanel("../view/FXMLLogin.fxml", MainApp.getWidthScreen(), MainApp.getHeightScreen());
-
     }
 
     public void setChangePanelCaixa() throws Exception{
@@ -127,9 +125,9 @@ public class ClienteController implements Initializable {
     }
 
     private void resetFieldsValues() {
-        tfNome.textProperty().set("");
-        tfEndereco.textProperty().set("");
-        tfCpf.textProperty().set("");
+        tfNome.clear();
+        tfEndereco.clear();
+        tfCpf.clear();
     }
 
 }

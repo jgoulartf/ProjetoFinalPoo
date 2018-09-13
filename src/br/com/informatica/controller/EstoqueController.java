@@ -1,15 +1,21 @@
 package br.com.informatica.controller;
 
+import br.com.informatica.application.MainApp;
 import br.com.informatica.dao.DAOFactory;
 import br.com.informatica.dao.EquipamentoDAO;
 import br.com.informatica.model.Cliente;
 import br.com.informatica.model.Equipamento;
+import br.com.informatica.model.Local;
+import br.com.informatica.model.Responsavel;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTextField;
+import javafx.beans.property.DoubleProperty;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.util.StringConverter;
+import javafx.util.converter.DoubleStringConverter;
+import javafx.util.converter.IntegerStringConverter;
 import javafx.util.converter.NumberStringConverter;
 
 import java.net.URL;
@@ -18,7 +24,7 @@ import java.util.ResourceBundle;
 
 public class EstoqueController implements Initializable {
 
-    EquipamentoDAO dao = DAOFactory.getEquipamentoDAO();
+    private EquipamentoDAO dao = DAOFactory.getEquipamentoDAO();
 
     @FXML JFXTextField searchEquipamentos;
 
@@ -38,7 +44,10 @@ public class EstoqueController implements Initializable {
 
     @FXML JFXTextField tfResponsavel;
 
-    StringConverter<Number> numberToString = new NumberStringConverter();
+    private StringConverter<Number> numberToString = new NumberStringConverter();
+    private StringConverter<Double> doubleToString = new DoubleStringConverter();
+    private StringConverter<Integer> integerToString = new IntegerStringConverter();
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -53,7 +62,6 @@ public class EstoqueController implements Initializable {
             bindListView(newValue);
         });
     }
-
 
 
     private void loadListView(boolean filter){
@@ -99,6 +107,7 @@ public class EstoqueController implements Initializable {
     public void cadastrarEquipamento() {
 
         List<Equipamento> equipamentos = dao.load();
+
         equipamentos.add( passFieldsValues() );
 
         dao.store(equipamentos);
@@ -106,6 +115,20 @@ public class EstoqueController implements Initializable {
         loadListView(false);
     }
 
+
+    @FXML
+    private void atualizarEquipamento() {
+        dao.store(listViewEquipamentos.getItems());
+        listViewEquipamentos.getSelectionModel().clearSelection();
+        resetFieldsValues();
+    }
+
+    @FXML
+    private void deletarEquipamento() {
+        dao.delete(listViewEquipamentos.getSelectionModel().selectedItemProperty().get().getId());
+        loadListView(false);
+        resetFieldsValues();
+    }
 
     public void setChangePanelCaixa() throws Exception{
         ChangePanelController.setChangePanelCaixa();
@@ -119,15 +142,31 @@ public class EstoqueController implements Initializable {
         ChangePanelController.setChangePanelResponsavel();
     }
 
-    private Cliente passFieldsValues() {
-        return new Equipamento(dao.generateId(), tfNome.getText(),)
+    private Equipamento passFieldsValues() {
+        // Gerando o novo equipamento, sem os campos local e responsavel.
+
+        String nome = tfNome.getText();
+        Double peso = doubleToString.fromString(tfPeso.getText());
+        Double preco = doubleToString.fromString(tfPreco.getText());
+        Integer quantidade = integerToString.fromString(tfQuantidade.getText());
+        Integer numeroDeSerie = integerToString.fromString(tfNumeroDeSerie.getText());
+
+        Equipamento e = new Equipamento();
+        //System.out.println("NOME: " + e.getNome());
+
+        return e;
+
     }
 
     private void resetFieldsValues() {
-        tfNome.textProperty().set("");
-        tfEndereco.textProperty().set("");
-        tfCpf.textProperty().set("");
+        tfNome.clear();
+        tfPeso.clear();
+        tfPreco.clear();
+        tfQuantidade.clear();
+        tfNumeroDeSerie.clear();
     }
 
-
+    public void sair() throws Exception {
+        MainApp.changePanel("../view/FXMLLogin.fxml", MainApp.getWidthScreen(), MainApp.getHeightScreen());
+    }
 }

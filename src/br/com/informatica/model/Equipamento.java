@@ -17,16 +17,30 @@ public class Equipamento {
 
     public Equipamento(){}
 
-    public Equipamento(int id, StringProperty nome, DoubleProperty peso, DoubleProperty preco,
-                       IntegerProperty quantidade, IntegerProperty numeroDeSerie, Local local, Responsavel responsavel) {
-        this.id = id;
-        this.nome = nome;
-        this.peso = peso;
-        this.preco = preco;
-        this.quantidade = quantidade;
-        this.numeroDeSerie = numeroDeSerie;
-        this.local = local;
-        this.responsavel = responsavel;
+    public Equipamento(int id, String nome, Double peso, Double preco,
+                       Integer quantidade, Integer numeroDeSerie, Local local, Responsavel responsavel)
+    {
+        this.setNome(nome);
+        this.setPeso(peso);
+        this.setPreco(preco);
+        this.setQuantidade(quantidade);
+        this.setNumeroDeSerie(numeroDeSerie);
+        this.setLocal(local);
+        this.setResponsavel(responsavel);
+    }
+
+    public Equipamento(String nome) {
+        setNome(nome);
+    }
+
+    public Equipamento(int id, String nome, Double peso, Double preco,
+                       Integer quantidade, Integer numeroDeSerie)
+    {
+        this.setNome(nome);
+        this.setPeso(peso);
+        this.setPreco(preco);
+        this.setQuantidade(quantidade);
+        this.setNumeroDeSerie(numeroDeSerie);
     }
 
     public int getId() {

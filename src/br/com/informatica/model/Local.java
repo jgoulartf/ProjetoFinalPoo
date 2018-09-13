@@ -5,6 +5,11 @@ public class Local {
     private int codigoDaPrateleira;
     private int numeroDaSessao;
 
+    public Local(int codigoDaPrateleira, int numeroDaSessao) {
+        this.codigoDaPrateleira = codigoDaPrateleira;
+        this.numeroDaSessao = numeroDaSessao;
+    }
+
     public int getCodigoDaPrateleira() { return codigoDaPrateleira; }
 
     public void setCodigoDaPrateleira(int codigoDaPrateleira) {
