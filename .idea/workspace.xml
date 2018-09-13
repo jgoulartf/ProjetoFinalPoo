@@ -5,10 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/LOGO.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/icons8-add-shopping-cart-96.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/icons8-back-to-96.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/icons8-contacts-50.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/icons8-left-50.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/icons8-password-50.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/icons8-produto-96.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/icons8-sair-52.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/icons8-search-96.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/icons8-shopping-cart-96.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/icons8-vários-dispositivos-96.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProjetoFinalPoo/br/com/informatica/view/FXMLLogin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProjetoFinalPoo/br/com/informatica/view/FXMLLogin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/informatica/controller/CaixaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/informatica/controller/CaixaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/br/com/informatica/controller/EstoqueController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/informatica/controller/EstoqueController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/informatica/dao/EquipamentoJSONDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/informatica/dao/EquipamentoJSONDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/br/com/informatica/model/Equipamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/informatica/model/Equipamento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/informatica/view/FXMLCaixa.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/informatica/view/FXMLCaixa.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/informatica/view/FXMLCliente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/informatica/view/FXMLCliente.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/informatica/view/FXMLEstoque.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/informatica/view/FXMLEstoque.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/informatica/view/FXMLLogin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/informatica/view/FXMLLogin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/informatica/view/FXMLResponsavel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/informatica/view/FXMLResponsavel.fxml" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -135,14 +153,14 @@
         <counts>
           <entry key="dummy" value="45" />
           <entry key="fxml" value="66" />
-          <entry key="java" value="12374" />
-          <entry key="json" value="211" />
+          <entry key="java" value="13326" />
+          <entry key="json" value="212" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="12374" />
-          <entry key="JSON" value="211" />
+          <entry key="JAVA" value="13326" />
+          <entry key="JSON" value="212" />
           <entry key="PLAIN_TEXT" value="45" />
           <entry key="XML" value="66" />
         </counts>
@@ -150,17 +168,17 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="2" />
-          <entry key="fxml" value="17" />
-          <entry key="java" value="132" />
-          <entry key="json" value="8" />
+          <entry key="fxml" value="19" />
+          <entry key="java" value="141" />
+          <entry key="json" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="2" />
-          <entry key="JAVA" value="132" />
-          <entry key="JSON" value="8" />
-          <entry key="XML" value="17" />
+          <entry key="JAVA" value="141" />
+          <entry key="JSON" value="9" />
+          <entry key="XML" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.spring.boot.run.usages" />
@@ -222,29 +240,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/br/com/informatica/application/MainApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="37" selection-start-line="37" selection-end-line="37" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/out/production/ProjetoFinalPoo/br/com/informatica/data/equipamentos.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="2" lean-forward="true" selection-start-column="2" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/br/com/informatica/controller/EstoqueController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="62" selection-start-line="62" selection-end-line="62" />
+            <state relative-caret-position="76">
+              <caret line="38" selection-start-line="38" selection-end-line="38" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -253,22 +250,59 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/br/com/informatica/controller/CaixaController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="51" column="38" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
+              <folding>
+                <element signature="e#2524#2525#0" expanded="true" />
+                <element signature="e#2554#2555#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/br/com/informatica/controller/EstoqueController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="77" column="17" selection-start-line="77" selection-start-column="17" selection-end-line="77" selection-end-column="17" />
+              <folding>
+                <element signature="e#3309#3310#0" expanded="true" />
+                <element signature="e#3343#3344#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/br/com/informatica/controller/ClienteController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
+            <state relative-caret-position="360">
               <caret line="51" column="9" lean-forward="true" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/br/com/informatica/dao/ClienteJSONDAO.java">
+        <entry file="file://$PROJECT_DIR$/src/br/com/informatica/model/Equipamento.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-90">
-              <caret line="29" column="51" lean-forward="true" selection-start-line="29" selection-start-column="51" selection-end-line="29" selection-end-column="51" />
+            <state relative-caret-position="179">
+              <caret line="119" column="70" selection-start-line="119" selection-start-column="70" selection-end-line="119" selection-end-column="70" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#2687#2688#0" expanded="true" />
+                <element signature="e#2786#2787#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/br/com/informatica/view/FXMLCaixa.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="215">
+              <caret line="130" column="47" selection-start-line="130" selection-start-column="47" selection-end-line="130" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -295,6 +329,7 @@
       <find>cliente</find>
       <find>DoublePro</find>
       <find>nome</find>
+      <find>combo</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -342,7 +377,6 @@
         <option value="$PROJECT_DIR$/src/br/com/informatica/view/FXMLCaixa.fxml" />
         <option value="$PROJECT_DIR$/src/br/com/informatica/controller/FuncionarioController.java" />
         <option value="$PROJECT_DIR$/src/br/com/informatica/model/User.java" />
-        <option value="$PROJECT_DIR$/src/br/com/informatica/controller/CaixaController.java" />
         <option value="$PROJECT_DIR$/src/br/com/informatica/controller/ResponsavelController.java" />
         <option value="$PROJECT_DIR$/src/br/com/informatica/controller/ChangePanelController.java" />
         <option value="$PROJECT_DIR$/src/br/com/informatica/dao/DAOFactory.java" />
@@ -365,11 +399,12 @@
         <option value="$PROJECT_DIR$/src/br/com/informatica/model/Local.java" />
         <option value="$PROJECT_DIR$/src/br/com/informatica/model/Responsavel.java" />
         <option value="$PROJECT_DIR$/src/br/com/informatica/dao/EquipamentoJSONDAO.java" />
-        <option value="$PROJECT_DIR$/src/br/com/informatica/model/Equipamento.java" />
         <option value="$PROJECT_DIR$/src/br/com/informatica/dao/ClienteJSONDAO.java" />
-        <option value="$PROJECT_DIR$/src/br/com/informatica/controller/EstoqueController.java" />
-        <option value="$PROJECT_DIR$/out/production/ProjetoFinalPoo/br/com/informatica/data/equipamentos.json" />
         <option value="$PROJECT_DIR$/src/br/com/informatica/controller/ClienteController.java" />
+        <option value="$PROJECT_DIR$/out/production/ProjetoFinalPoo/br/com/informatica/data/equipamentos.json" />
+        <option value="$PROJECT_DIR$/src/br/com/informatica/controller/EstoqueController.java" />
+        <option value="$PROJECT_DIR$/src/br/com/informatica/model/Equipamento.java" />
+        <option value="$PROJECT_DIR$/src/br/com/informatica/controller/CaixaController.java" />
       </list>
     </option>
   </component>
@@ -386,11 +421,10 @@
     </treeState>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-592" />
-    <option name="y" value="337" />
-    <option name="width" value="1360" />
-    <option name="height" value="684" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="28" />
+    <option name="width" value="1352" />
+    <option name="height" value="679" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectReloadState">
@@ -401,8 +435,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -413,30 +446,20 @@
             <path>
               <item name="ProjetoFinalPoo" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProjetoFinalPoo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ProjetoFinalPoo" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProjetoFinalPoo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="informatica" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjetoFinalPoo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjetoFinalPoo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="informatica" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjetoFinalPoo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -452,22 +475,19 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536801660942" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536860398678" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/Programs/java_dependencies/gson-2.8.5.jar!/" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/br/com/informatica/data" />
-      <recent name="$PROJECT_DIR$/src/br/com/informatica/dao" />
-      <recent name="$PROJECT_DIR$/src2/src/main/java" />
-      <recent name="$PROJECT_DIR$/src/view" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="br.com.informatica.model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/br/com/informatica/view" />
@@ -476,8 +496,12 @@
       <recent name="$PROJECT_DIR$/src/view" />
       <recent name="$PROJECT_DIR$" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="br.com.informatica.model" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets" />
+      <recent name="$PROJECT_DIR$/out/production/assets" />
+      <recent name="$PROJECT_DIR$/src/br/com/informatica/data" />
+      <recent name="$PROJECT_DIR$/src/br/com/informatica/dao" />
+      <recent name="$PROJECT_DIR$/src2/src/main/java" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -646,7 +670,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95542000" />
+    <option name="totallyTimeSpent" value="105612000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -658,9 +682,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="30" width="1920" height="981" extended-state="6" />
+    <frame x="0" y="28" width="1352" height="679" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.18877006" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.19189602" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -669,8 +694,8 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32982457" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.37663886" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39928487" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34107143" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3140351" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.09122807" />
@@ -749,7 +774,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src2/src/main/java/informatica/view/FXMLHome.fxml" />
     <entry file="file://$PROJECT_DIR$/src2/src/main/java/informatica/application/MainApp.java" />
     <entry file="file://$PROJECT_DIR$/src2/src/main/java/informatica/controller/LoginController.java" />
     <entry file="file://$PROJECT_DIR$/src/br/com/informatica/model/Estoque.java">
@@ -779,8 +803,8 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/br/com/informatica/view/FXMLEstoque.fxml">
-      <provider selected="true" editor-type-id="text-editor" />
       <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/br/com/informatica/view/FXMLHome.fxml" />
     <entry file="file://$PROJECT_DIR$/src/br/com/informatica/controller/LoginController.java">
@@ -794,20 +818,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/br/com/informatica/view/FXMLLogin.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="12" column="174" lean-forward="true" selection-start-line="12" selection-start-column="174" selection-end-line="12" selection-end-column="219" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/informatica/view/FXMLCaixa.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="186" selection-start-line="15" selection-start-column="186" selection-end-line="15" selection-end-column="186" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/br/com/informatica/model/User.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -824,8 +840,8 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/br/com/informatica/view/FXMLResponsavel.fxml">
-      <provider selected="true" editor-type-id="text-editor" />
       <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/br/com/informatica/controller/ResponsavelController.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -930,12 +946,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/br/com/informatica/view/FXMLCliente.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="76" column="114" selection-start-line="76" selection-start-column="114" selection-end-line="76" selection-end-column="114" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/br/com/informatica/model/Responsavel.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -960,18 +976,17 @@
     </entry>
     <entry file="jar:///opt/java/jdk-10.0.2/lib/src.zip!/javafx.base/javafx/event/Event.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
+        <state relative-caret-position="2415">
           <caret line="198" selection-start-line="198" selection-end-line="198" />
         </state>
       </provider>
     </entry>
     <entry file="jar:///opt/java/jdk-10.0.2/lib/src.zip!/javafx.fxml/javafx/fxml/FXMLLoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="1786" selection-start-line="1786" selection-end-line="1786" />
+        <state relative-caret-position="23385">
+          <caret line="1670" selection-start-line="1670" selection-end-line="1670" />
           <folding>
             <element signature="e#67760#67761#0" expanded="true" />
-            <element signature="e#67805#67806#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -990,20 +1005,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="77" selection-start-line="6" selection-start-column="77" selection-end-line="6" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/informatica/controller/CaixaController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/informatica/model/Cliente.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
@@ -1038,93 +1039,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/informatica/application/MainApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" selection-start-line="37" selection-end-line="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/informatica/dao/EquipamentoJSONDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-318">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2497#2498#0" expanded="true" />
-            <element signature="e#2580#2581#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/informatica/model/Equipamento.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
-          <folding>
-            <element signature="e#1050#1051#0" expanded="true" />
-            <element signature="e#1075#1076#0" expanded="true" />
-            <element signature="e#1108#1109#0" expanded="true" />
-            <element signature="e#1136#1137#0" expanded="true" />
-            <element signature="e#1167#1168#0" expanded="true" />
-            <element signature="e#1200#1201#0" expanded="true" />
-            <element signature="e#1244#1245#0" expanded="true" />
-            <element signature="e#1271#1272#0" expanded="true" />
-            <element signature="e#1311#1312#0" expanded="true" />
-            <element signature="e#1346#1347#0" expanded="true" />
-            <element signature="e#1377#1378#0" expanded="true" />
-            <element signature="e#1410#1411#0" expanded="true" />
-            <element signature="e#1454#1455#0" expanded="true" />
-            <element signature="e#1481#1482#0" expanded="true" />
-            <element signature="e#1521#1522#0" expanded="true" />
-            <element signature="e#1556#1557#0" expanded="true" />
-            <element signature="e#1588#1589#0" expanded="true" />
-            <element signature="e#1622#1623#0" expanded="true" />
-            <element signature="e#1667#1668#0" expanded="true" />
-            <element signature="e#1695#1696#0" expanded="true" />
-            <element signature="e#1737#1738#0" expanded="true" />
-            <element signature="e#1774#1775#0" expanded="true" />
-            <element signature="e#1811#1812#0" expanded="true" />
-            <element signature="e#1850#1851#0" expanded="true" />
-            <element signature="e#1900#1901#0" expanded="true" />
-            <element signature="e#1933#1934#0" expanded="true" />
-            <element signature="e#1985#1986#0" expanded="true" />
-            <element signature="e#2032#2033#0" expanded="true" />
-            <element signature="e#2072#2073#0" expanded="true" />
-            <element signature="e#2114#2115#0" expanded="true" />
-            <element signature="e#2167#2168#0" expanded="true" />
-            <element signature="e#2203#2204#0" expanded="true" />
-            <element signature="e#2261#2262#0" expanded="true" />
-            <element signature="e#2314#2315#0" expanded="true" />
-            <element signature="e#2345#2346#0" expanded="true" />
-            <element signature="e#2373#2374#0" expanded="true" />
-            <element signature="e#2414#2415#0" expanded="true" />
-            <element signature="e#2448#2449#0" expanded="true" />
-            <element signature="e#2491#2492#0" expanded="true" />
-            <element signature="e#2525#2526#0" expanded="true" />
-            <element signature="e#2584#2585#0" expanded="true" />
-            <element signature="e#2630#2631#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/br/com/informatica/dao/ClienteJSONDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-90">
           <caret line="29" column="51" lean-forward="true" selection-start-line="29" selection-start-column="51" selection-end-line="29" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/informatica/controller/EstoqueController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="62" selection-start-line="62" selection-end-line="62" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1141,14 +1059,85 @@
     <entry file="file://$PROJECT_DIR$/out/production/ProjetoFinalPoo/br/com/informatica/data/equipamentos.json">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="2" lean-forward="true" selection-start-column="2" selection-end-column="2" />
+          <caret column="1" selection-start-column="1" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/informatica/dao/EquipamentoJSONDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/informatica/model/Cliente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/br/com/informatica/controller/ClienteController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
+        <state relative-caret-position="360">
           <caret line="51" column="9" lean-forward="true" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/informatica/application/MainApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/informatica/model/Equipamento.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="119" column="70" selection-start-line="119" selection-start-column="70" selection-end-line="119" selection-end-column="70" />
+          <folding>
+            <element signature="e#2687#2688#0" expanded="true" />
+            <element signature="e#2786#2787#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/informatica/controller/EstoqueController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="77" column="17" selection-start-line="77" selection-start-column="17" selection-end-line="77" selection-end-column="17" />
+          <folding>
+            <element signature="e#3309#3310#0" expanded="true" />
+            <element signature="e#3343#3344#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/informatica/view/FXMLCaixa.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="130" column="47" selection-start-line="130" selection-start-column="47" selection-end-line="130" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/informatica/controller/CaixaController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="51" column="38" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
+          <folding>
+            <element signature="e#2524#2525#0" expanded="true" />
+            <element signature="e#2554#2555#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1194,7 +1183,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>10</last-edited>
+          <last-edited>java10</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

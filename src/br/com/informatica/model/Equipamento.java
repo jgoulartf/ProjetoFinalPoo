@@ -114,4 +114,9 @@ public class Equipamento {
     public void setResponsavel(Responsavel responsavel) {
         this.responsavel = responsavel;
     }
+
+    @Override
+    public String toString() {
+        return this.getNome() + "\t  x" + this.getQuantidade() + "\t\t1x R$" + this.getPreco();
+    }
 }

@@ -43,9 +43,9 @@ public class EstoqueController implements Initializable {
 
     @FXML JFXTextField tfResponsavel;
 
-    private StringConverter<Number> numberToString = new NumberStringConverter();
-    private StringConverter<Double> doubleToString = new DoubleStringConverter();
-    private StringConverter<Integer> integerToString = new IntegerStringConverter();
+//    private StringConverter<Number> numberToString = new NumberStringConverter();
+//    private StringConverter<Double> doubleToString = new DoubleStringConverter();
+//    private StringConverter<Integer> integerToString = new IntegerStringConverter();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

@@ -1,33 +1,96 @@
 package br.com.informatica.controller;
 
+import br.com.informatica.dao.ClienteDAO;
+import br.com.informatica.dao.DAOFactory;
+import br.com.informatica.dao.EquipamentoDAO;
+import br.com.informatica.model.Cliente;
 import br.com.informatica.model.Equipamento;
-import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXListView;
-import com.jfoenix.controls.JFXTextArea;
-import com.jfoenix.controls.JFXTextField;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import com.jfoenix.controls.*;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 
-public class CaixaController {
+import java.net.URL;
+import java.util.List;
+import java.util.ResourceBundle;
 
-    @FXML private JFXButton changePanelCaixa;
+public class CaixaController implements Initializable {
 
-    @FXML private JFXButton changePanelCliente;
+    private EquipamentoDAO daoEquipamento = DAOFactory.getEquipamentoDAO();
+    private ClienteDAO daoCliente = DAOFactory.getClienteDao();
 
-    @FXML private JFXButton changePanelEstoque;
+    @FXML private JFXTextField searchEquipamentos;
 
-    @FXML private JFXButton changePanelFuncionario;
+    @FXML private JFXListView<Equipamento> listViewEquipamentos;
 
-    @FXML private JFXTextField searchProduct;
-
-    @FXML private JFXListView<Equipamento> listViewProducts;
+    @FXML private JFXListView<Equipamento> listViewCarrinho;
 
     @FXML private JFXTextField textFieldQuant;
 
     @FXML private JFXTextArea textAreaProduct;
 
-    @FXML private JFXListView<Equipamento> listViewProductsBuy;
+    @FXML private JFXComboBox<Cliente> escolherCliente ;
+
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        try{
+            loadListView(false);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        listViewEquipamentos.getSelectionModel().selectedItemProperty().addListener((event, oldValue,newValue) -> {
+            unBindListViewEstoque(oldValue);
+            bindListViewEstoque(newValue);
+        });
+
+        listViewCarrinho.getSelectionModel().selectedItemProperty().addListener((event, oldValue, newValue) -> {
+            unBindListViewCarrinho(oldValue);
+            bindListViewCarrinho(newValue)
+        });
+    }
+
+    @FXML
+    private void loadListView(boolean filter){
+        List<Equipamento> equipamentos;
+        List<Cliente> clientes = daoCliente.load();
+        if(!filter) {
+            equipamentos = daoEquipamento.load();
+        }
+        else {
+            equipamentos = daoEquipamento.filter(searchEquipamentos.getText());
+        }
+        listViewEquipamentos.setItems(FXCollections.observableArrayList(equipamentos));
+        escolherCliente.setItems(FXCollections.observableArrayList(clientes));
+    }
+
+    @FXML
+    private void adicionarProdutoCarrinho() {}
+
+
+    private void bindListViewEstoque(Equipamento e) {
+        if(e != null) {
+            textAreaProduct.textProperty().bindBidirectional(new SimpleStringProperty(e.toString()));
+            textAreaProduct.setOpacity(1);
+        }
+
+    }
+
+    private void unBindListViewEstoque(Equipamento e) {
+        if(e != null) {
+            textAreaProduct.textProperty().unbindBidirectional(new SimpleStringProperty(e.toString()));
+            textAreaProduct.setOpacity(0.43);
+        }
+
+    }
+
+    @FXML
+    private void onSearch() {
+        loadListView(true);
+    }
 
     public void setChangePanelCliente() throws Exception{
         ChangePanelController.setChangePanelCliente();

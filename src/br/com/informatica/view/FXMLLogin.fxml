@@ -18,7 +18,7 @@
                <left>
                   <ImageView fitHeight="66.0" fitWidth="194.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
                      <image>
-                        <Image url="@../../../../../assets/LOGO.jpg" />
+                        <Image url="@../../../../../out/production/assets/LOGO.jpg" />
                      </image>
                   </ImageView>
                </left>
@@ -37,12 +37,12 @@
       </JFXButton>
       <ImageView fitHeight="25.0" fitWidth="21.0" layoutX="268.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../assets/icons8-contacts-50.png" />
+            <Image url="@../../../../../out/production/assets/icons8-contacts-50.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="109.0" fitWidth="21.0" layoutX="268.0" layoutY="215.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../assets/icons8-password-50.png" />
+            <Image url="@../../../../../out/production/assets/icons8-password-50.png" />
          </image>
       </ImageView>
       <JFXPasswordField fx:id="JFXPasswordLogin" focusColor="#5c89ce" layoutX="292.0" layoutY="203.0" prefHeight="41.0" prefWidth="298.0" promptText="Password" unFocusColor="#bccce5">

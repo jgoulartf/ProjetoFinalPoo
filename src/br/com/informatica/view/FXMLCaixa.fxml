@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXListView?>
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import com.jfoenix.controls.JFXToolbar?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -45,7 +48,7 @@
                <left>
                   <ImageView fitHeight="66.0" fitWidth="194.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
                      <image>
-                        <Image url="@../../../../../assets/LOGO.jpg" />
+                        <Image url="@../../../../../out/production/assets/LOGO.jpg" />
                      </image>
                   </ImageView>
                </left>
@@ -54,7 +57,7 @@
                      <children>
                         <ImageView fitHeight="22.0" fitWidth="31.0" layoutX="166.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="8.0">
                            <image>
-                              <Image url="@../../../../../assets/icons8-sair-52.png" />
+                              <Image url="@../../../../../out/production/assets/icons8-sair-52.png" />
                            </image>
                         </ImageView>
                         <JFXButton alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" layoutX="169.0" layoutY="23.0" prefHeight="32.0" prefWidth="22.0" textFill="#626f83fa" AnchorPane.rightAnchor="7.0">
@@ -75,18 +78,18 @@
                   <Font name="Roboto Mono for Powerline" size="24.0" />
                </font>
             </Text>
-            <JFXTextField fx:id="searchProduct" focusColor="#5c89ce" layoutX="8.0" layoutY="42.0" prefHeight="40.0" prefWidth="213.0" promptText="Pesquisar..." unFocusColor="#bccce5" AnchorPane.leftAnchor="8.0" AnchorPane.topAnchor="42.0">
+            <JFXTextField fx:id="searchEquipamentos" focusColor="#5c89ce" layoutX="8.0" layoutY="42.0" onKeyPressed="#onSearch" prefHeight="40.0" prefWidth="213.0" promptText="Pesquisar..." unFocusColor="#bccce5" AnchorPane.leftAnchor="8.0" AnchorPane.topAnchor="42.0">
                <font>
                   <Font name="Roboto Mono for Powerline" size="16.0" />
                </font>
             </JFXTextField>
             <ImageView fitHeight="26.0" fitWidth="22.0" layoutX="229.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="229.0">
                <image>
-                  <Image url="@../../../../../assets/icons8-search-96.png" />
+                  <Image url="@../../../../../out/production/assets/icons8-search-96.png" />
                </image>
             </ImageView>
-            <JFXListView fx:id="listViewProducts" layoutX="8.0" layoutY="97.0" prefHeight="269.0" prefWidth="246.0" AnchorPane.leftAnchor="8.0" AnchorPane.topAnchor="97.0" />
-            <JFXTextField fx:id="textFieldQuant" focusColor="#5c89ce" layoutX="499.0" layoutY="56.0" prefHeight="37.0" prefWidth="99.0" promptText="Quantidade" unFocusColor="#bccce5" AnchorPane.leftAnchor="499.0" AnchorPane.rightAnchor="42.0" AnchorPane.topAnchor="56.0">
+            <JFXListView fx:id="listViewEquipamentos" layoutX="8.0" layoutY="97.0" prefHeight="269.0" prefWidth="246.0" AnchorPane.leftAnchor="8.0" AnchorPane.topAnchor="97.0" />
+            <JFXTextField fx:id="textFieldQuant" focusColor="#5c89ce" layoutX="505.0" layoutY="56.0" prefHeight="37.0" prefWidth="99.0" unFocusColor="#bccce5" AnchorPane.leftAnchor="505.0" AnchorPane.rightAnchor="36.0" AnchorPane.topAnchor="56.0">
                <font>
                   <Font name="Roboto Mono for Powerline" size="16.0" />
                </font>
@@ -101,24 +104,32 @@
                   <Font size="1.0" />
                </font>
             </JFXButton>
-            <JFXTextArea fx:id="textAreaProduct" disable="true" focusColor="#5c89ce" layoutX="287.0" layoutY="54.0" prefHeight="40.0" prefWidth="200.0" promptText="Produto..." unFocusColor="#bccce5" AnchorPane.leftAnchor="286.0" />
+            <JFXTextArea fx:id="textAreaProduct" editable="false" focusColor="#5c89ce" layoutX="287.0" layoutY="54.0" opacity="0.43" prefHeight="40.0" prefWidth="200.0" promptText="Produto..." unFocusColor="#bccce5" AnchorPane.leftAnchor="286.0">
+               <font>
+                  <Font name="Roboto Mono for Powerline" size="13.0" />
+               </font></JFXTextArea>
             <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="287.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="286.0">
                <image>
-                  <Image url="@../../../../../assets/icons8-shopping-cart-96.png" />
+                  <Image url="@../out/production/assets/icons8-shopping-cart-96.png" />
                </image>
             </ImageView>
             <Line endX="250.0" layoutX="196.0" layoutY="192.0" opacity="0.37" rotate="90.0" startX="-100.0" strokeWidth="0.5" AnchorPane.leftAnchor="95.5" />
-            <ImageView fitHeight="22.0" fitWidth="31.0" layoutX="604.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="66.0">
+            <ImageView fitHeight="22.0" fitWidth="31.0" layoutX="611.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="73.0">
                <image>
-                  <Image url="@../../../../../assets/icons8-add-shopping-cart-96.png" />
+                  <Image url="@../../../../../out/production/assets/icons8-add-shopping-cart-96.png" />
                </image>
             </ImageView>
-            <JFXButton layoutX="604.0" layoutY="66.0" prefHeight="22.0" prefWidth="22.0" AnchorPane.bottomAnchor="291.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="66.0">
+            <JFXButton layoutX="611.0" layoutY="73.0" onAction="#adicionarProdutoCarrinho" prefHeight="22.0" prefWidth="22.0" AnchorPane.bottomAnchor="284.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="73.0">
                <font>
                   <Font size="1.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </JFXButton>
-            <JFXListView fx:id="listViewProductsBuy" layoutX="293.0" layoutY="108.0" prefHeight="216.0" prefWidth="346.0" AnchorPane.leftAnchor="286.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="108.0" />
+            <JFXListView fx:id="listViewCarrinho" layoutX="293.0" layoutY="108.0" prefHeight="216.0" prefWidth="346.0" AnchorPane.leftAnchor="286.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="108.0" />
+            <JFXComboBox fx:id="escolherCliente" focusColor="#5c89ce" layoutX="287.0" layoutY="335.0" prefHeight="26.0" prefWidth="213.0" promptText="Cliente" unFocusColor="#bccce5" />
+            <Label layoutX="505.0" layoutY="48.0" text="Quantidade" textFill="#5c89ce" />
          </children>
       </AnchorPane>
       <Line disable="true" endX="380.0" layoutX="13.0" layoutY="262.0" opacity="0.37" rotate="90.0" />
