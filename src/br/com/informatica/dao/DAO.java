@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface DAO<T> {
 
-    public ArrayList<T> load() throws Exception;
+    public List<T> load();
 
-    public void store(ListJsonDAO<T> list);
+    public void store(List<T> list);
 
     public List filter(String filtro);
 

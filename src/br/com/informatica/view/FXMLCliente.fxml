@@ -74,7 +74,7 @@
                   <Font name="Roboto Mono for Powerline" size="24.0" />
                </font>
             </Text>
-            <JFXTextField fx:id="searchCliente" focusColor="#5c89ce" layoutX="14.0" layoutY="43.0" prefHeight="40.0" prefWidth="213.0" promptText="Pesquisar..." unFocusColor="#bccce5" AnchorPane.leftAnchor="8.0">
+            <JFXTextField fx:id="searchCliente" focusColor="#5c89ce" layoutX="14.0" layoutY="43.0" onKeyPressed="#onSearch" prefHeight="40.0" prefWidth="213.0" promptText="Pesquisar..." unFocusColor="#bccce5" AnchorPane.leftAnchor="8.0">
                <font>
                   <Font name="Roboto Mono for Powerline" size="16.0" />
                </font>
@@ -84,7 +84,9 @@
                   <Image url="@../../../../../assets/icons8-search-96.png" />
                </image>
             </ImageView>
-            <JFXListView fx:id="listViewClientes" layoutX="14.0" layoutY="98.0" prefHeight="269.0" prefWidth="246.0" AnchorPane.leftAnchor="8.0" />
+            <JFXListView fx:id="listViewClientes" layoutX="14.0" layoutY="98.0" prefHeight="269.0" prefWidth="246.0" AnchorPane.leftAnchor="8.0">
+
+            </JFXListView>
             <JFXButton alignment="CENTER" buttonType="RAISED" layoutX="517.0" layoutY="333.0" onAction="#cadastrarCliente" prefHeight="32.0" prefWidth="115.0" style="-fx-background-color: #d1d2d3;" text="Cadastrar" textFill="#5c89ce">
                <font>
                   <Font name="Roboto Mono for Powerline" size="16.0" />
@@ -116,6 +118,16 @@
                   <Font name="Roboto Mono for Powerline" size="16.0" />
                </font>
             </JFXTextField>
+            <JFXButton alignment="CENTER" buttonType="RAISED" layoutX="402.0" layoutY="333.0" onAction="#atualizarCliente" prefHeight="32.0" prefWidth="115.0" style="-fx-background-color: #d1d2d3;" text="Atualizar" textFill="#5c89ce" AnchorPane.rightAnchor="135.0">
+               <font>
+                  <Font name="Roboto Mono for Powerline" size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton alignment="CENTER" buttonType="RAISED" layoutX="286.0" layoutY="333.0" onAction="#deletarCliente" prefHeight="32.0" prefWidth="93.0" style="-fx-background-color: #d1d2d3;" text="Deletar" textFill="#5c89ce">
+               <font>
+                  <Font name="Roboto Mono for Powerline" size="16.0" />
+               </font>
+            </JFXButton>
          </children>
       </AnchorPane>
       <Line fx:id="linhazinha2" disable="true" endX="380.0" layoutX="13.0" layoutY="262.0" opacity="0.37" rotate="90.0" />

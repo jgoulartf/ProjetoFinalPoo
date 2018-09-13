@@ -1,37 +1,40 @@
 package br.com.informatica.model;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 public class Cliente extends Pessoa {
     // Attributes
-    private String cpf;
+    private StringProperty cpf = new SimpleStringProperty();
 
+    public Cliente() {}
 
     public Cliente(String nome, String endereco, String cpf) {
         super(nome, endereco);
         setCpf(cpf);
     }
 
-    // Operations
-    public final boolean comprarEquipamento (Equipamento equipamento) {
-        return true;
+    public Cliente(int id, String nome, String endereco, String cpf) {
+        super(id, nome, endereco);
+        setCpf(cpf);
     }
 
     public String getCpf() {
+        return cpf.get();
+    }
+
+    public final StringProperty cpfProperty() {
         return cpf;
     }
 
-    // Perguntar se pode fazer essas verificacoes aqui.
     public void setCpf(String cpf) {
-        if(!cpf.isEmpty() && cpf.length() == 14) {
-            this.cpf = cpf;
-        }
-        else {
-            this.cpf = "Formato invalido ao cadastrar";
-        }
+        this.cpf.set(cpf);
     }
 
     @Override
     public String toString() {
-        return "Nome: " + this.getNome() +
-                " | CPF: " + cpf + "\n";
+        return getNome();
     }
 }

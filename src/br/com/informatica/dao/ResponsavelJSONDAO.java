@@ -8,12 +8,12 @@ import java.util.List;
 
 public class ResponsavelJSONDAO implements ResponsavelDAO {
     @Override
-    public ArrayList<Responsavel> load() {
+    public List<Responsavel> load() {
         return null;
     }
 
     @Override
-    public void store(ListJsonDAO<Responsavel> list) {
+    public void store(List<Responsavel> list) {
 
     }
 
