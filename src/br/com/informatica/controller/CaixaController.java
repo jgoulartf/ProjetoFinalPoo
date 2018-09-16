@@ -5,20 +5,27 @@ import br.com.informatica.dao.DAOFactory;
 import br.com.informatica.dao.EquipamentoDAO;
 import br.com.informatica.model.Cliente;
 import br.com.informatica.model.Equipamento;
+import br.com.informatica.model.NotaDeVenda;
 import com.jfoenix.controls.*;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
 public class CaixaController implements Initializable {
 
     private EquipamentoDAO daoEquipamento = DAOFactory.getEquipamentoDAO();
+
     private ClienteDAO daoCliente = DAOFactory.getClienteDao();
+
+    private List<Equipamento> carrinho = new ArrayList<Equipamento>();
 
     @FXML private JFXTextField searchEquipamentos;
 
@@ -47,10 +54,10 @@ public class CaixaController implements Initializable {
             bindListViewEstoque(newValue);
         });
 
-        listViewCarrinho.getSelectionModel().selectedItemProperty().addListener((event, oldValue, newValue) -> {
-            unBindListViewCarrinho(oldValue);
-            bindListViewCarrinho(newValue)
-        });
+//        listViewCarrinho.getSelectionModel().selectedItemProperty().addListener((event, oldValue, newValue) -> {
+//            unBindListViewCarrinho(oldValue);
+//            bindListViewCarrinho(newValue)
+//        });
     }
 
     @FXML
@@ -68,7 +75,17 @@ public class CaixaController implements Initializable {
     }
 
     @FXML
-    private void adicionarProdutoCarrinho() {}
+    private void adicionarProdutoCarrinho() {
+        Equipamento e = listViewEquipamentos.getSelectionModel().getSelectedItem();
+
+        e.setQuantidade(textFieldQuant.getText());
+
+        carrinho.addAll(listViewEquipamentos.getSelectionModel().getSelectedItems());
+
+        if(carrinho != null) {
+            listViewCarrinho.setItems(FXCollections.observableArrayList(carrinho));
+        }
+    }
 
 
     private void bindListViewEstoque(Equipamento e) {
@@ -84,6 +101,39 @@ public class CaixaController implements Initializable {
             textAreaProduct.textProperty().unbindBidirectional(new SimpleStringProperty(e.toString()));
             textAreaProduct.setOpacity(0.43);
         }
+
+    }
+
+    @FXML
+    private void finalizarPedido() {
+
+        if( carrinho.size() > 0 ) {
+
+            Alert dialogoErro = new Alert(Alert.AlertType.CONFIRMATION);
+            dialogoErro.setTitle("FINALIZAR PEDIDO");
+            dialogoErro.setHeaderText(null);
+            dialogoErro.setContentText("Deseja finalizar seu pedido e emitir a nota de venda?");
+            dialogoErro.showAndWait().ifPresent(response -> {
+                if( response == ButtonType.OK ) {
+                    //emitirNotaDeVenda();
+                    System.out.println("Entrei no teste!");
+                }
+            });
+
+        }
+        else {
+            Alert dialogoErro = new Alert(Alert.AlertType.WARNING);
+            dialogoErro.setTitle("CARRINHO VAZIO");
+            dialogoErro.setHeaderText(null);
+            dialogoErro.setContentText("Adicione mais produtos no carrinho!");
+            dialogoErro.showAndWait();
+        }
+    }
+
+    private void emitirNotaDeVenda() {
+
+        NotaDeVenda nota = new NotaDeVenda();
+
 
     }
 

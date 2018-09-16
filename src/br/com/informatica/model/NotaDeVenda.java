@@ -10,6 +10,15 @@ public class NotaDeVenda {
     private ArrayList<Equipamento> produtos;
     private double precoTotal;
 
+    public NotaDeVenda() {}
+
+    public NotaDeVenda(Cliente cliente, Date dataDeEmissao, ArrayList<Equipamento> produtos, double precoTotal) {
+        setCliente(cliente);
+        setDataDeEmissao(dataDeEmissao);
+        setProdutos(produtos);
+        setPrecoTotal(precoTotal);
+    }
+
     public Cliente getCliente() {
         return cliente;
     }

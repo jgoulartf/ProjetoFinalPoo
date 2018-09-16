@@ -94,7 +94,7 @@
                   <Font name="Roboto Mono for Powerline" size="16.0" />
                </font>
             </JFXTextField>
-            <JFXButton alignment="CENTER" buttonType="RAISED" layoutX="509.0" layoutY="333.0" prefHeight="32.0" prefWidth="123.0" style="-fx-background-color: #d1d2d3;" text="Finalizar" textFill="#5c89ce" AnchorPane.topAnchor="332.0">
+            <JFXButton alignment="CENTER" buttonType="RAISED" layoutX="509.0" layoutY="333.0" onAction="#finalizarPedido" prefHeight="32.0" prefWidth="123.0" style="-fx-background-color: #d1d2d3;" text="Finalizar" textFill="#5c89ce" AnchorPane.topAnchor="332.0">
                <font>
                   <Font name="Roboto Mono for Powerline" size="16.0" />
                </font>
