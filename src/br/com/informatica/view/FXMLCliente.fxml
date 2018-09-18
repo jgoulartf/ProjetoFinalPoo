@@ -36,6 +36,11 @@
                   <Font name="Roboto Mono for Powerline" size="16.0" />
                </font>
             </JFXButton>
+            <JFXButton fx:id="setChangePanelResponsavel1" alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="233.0" onAction="#setChangePanelLocal" prefHeight="48.0" prefWidth="200.0" style="-fx-background-color: #d1d2d3;" text="Local" textFill="#5c89ce" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="232.0">
+               <font>
+                  <Font name="Roboto Mono for Powerline" size="16.0" />
+               </font>
+            </JFXButton>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="-8.0" prefHeight="66.0" prefWidth="260.0">
@@ -44,7 +49,7 @@
                <left>
                   <ImageView fitHeight="66.0" fitWidth="194.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
                      <image>
-                        <Image url="@../../../../../out/production/assets/LOGO.jpg" />
+                        <Image url="@../../../../assets/LOGOJGA.jpeg" />
                      </image>
                   </ImageView>
                </left>
@@ -53,7 +58,7 @@
                      <children>
                         <ImageView fitHeight="22.0" fitWidth="31.0" layoutX="166.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="8.0">
                            <image>
-                              <Image url="@../../../../../out/production/assets/icons8-sair-52.png" />
+                              <Image url="@../../../../assets/icons8-sair-52.png" />
                            </image>
                         </ImageView>
                         <JFXButton alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" layoutX="169.0" layoutY="24.0" onAction="#sair" prefHeight="28.0" prefWidth="22.0" textFill="#626f83fa" AnchorPane.rightAnchor="7.0">
@@ -81,7 +86,7 @@
             </JFXTextField>
             <ImageView fitHeight="26.0" fitWidth="22.0" layoutX="231.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="231.0">
                <image>
-                  <Image url="@../../../../../out/production/assets/icons8-search-96.png" />
+                  <Image url="@../../../../assets/icons8-search-96.png" />
                </image>
             </ImageView>
             <JFXListView fx:id="listViewClientes" layoutX="14.0" layoutY="98.0" prefHeight="269.0" prefWidth="246.0" AnchorPane.leftAnchor="8.0">
@@ -99,7 +104,7 @@
             </JFXButton>
             <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="283.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="286.0">
                <image>
-                  <Image url="@../../../../../out/production/assets/icons8-contacts-50.png" />
+                  <Image url="@../../../../assets/icons8-contacts-50.png" />
                </image>
             </ImageView>
             <Line endX="250.0" layoutX="196.0" layoutY="192.0" opacity="0.37" rotate="90.0" startX="-100.0" strokeWidth="0.5" AnchorPane.bottomAnchor="186.5" AnchorPane.leftAnchor="95.5" AnchorPane.rightAnchor="193.5" AnchorPane.topAnchor="191.5" />

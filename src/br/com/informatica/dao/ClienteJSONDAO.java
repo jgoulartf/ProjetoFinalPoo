@@ -22,10 +22,8 @@ import java.util.stream.Collectors;
 public class ClienteJSONDAO implements ClienteDAO {
 
     private Gson gson = new GsonBuilder().registerTypeAdapter(StringProperty.class, new StringPropertyAdapter()).create();
-    //private Gson gsonD = new GsonBuilder().registerTypeAdapter();
 
     private static final Path STORAGE_FILE = Paths.get("out//production//ProjetoFinalPoo//br//com//informatica//data//clientes.json");
-
 
     @Override
     public List<Cliente> load() {
@@ -49,7 +47,6 @@ public class ClienteJSONDAO implements ClienteDAO {
         }catch (Exception e){
             throw new DAOException(e);
         }
-
     }
 
     @Override
@@ -72,7 +69,6 @@ public class ClienteJSONDAO implements ClienteDAO {
         });
         clientes.remove(map.get(String.valueOf(id)));
         store(clientes);
-
     }
 
     @Override
@@ -91,18 +87,5 @@ final class StringPropertyAdapter implements JsonSerializer<StringProperty>, Jso
     @Override
     public JsonElement serialize(StringProperty stringProperty, Type type, JsonSerializationContext jsonSerializationContext) {
         return new JsonPrimitive(stringProperty.get());
-    }
-}
-
-final class DoublePropertyAdapter implements JsonSerializer<DoubleProperty>, JsonDeserializer<DoubleProperty> {
-
-    @Override
-    public DoubleProperty deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
-        return new SimpleDoubleProperty(jsonElement.getAsDouble());
-    }
-
-    @Override
-    public JsonElement serialize(DoubleProperty doubleProperty, Type type, JsonSerializationContext jsonSerializationContext) {
-        return new JsonPrimitive(doubleProperty.get());
     }
 }

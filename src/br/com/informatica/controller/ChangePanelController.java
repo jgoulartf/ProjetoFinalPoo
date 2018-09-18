@@ -25,4 +25,10 @@ public class ChangePanelController {
         MainApp.changePanel("../view/FXMLResponsavel.fxml", MainApp.getWidthScreen(), MainApp.getHeightScreen());
     }
 
+    @FXML
+    public static void setChangePanelLocal() throws Exception {
+        MainApp.changePanel("../view/FXMLLocal.fxml", MainApp.getWidthScreen(), MainApp.getHeightScreen());
+    }
+
+
 }

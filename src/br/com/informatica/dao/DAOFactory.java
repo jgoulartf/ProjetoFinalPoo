@@ -10,8 +10,5 @@ public class DAOFactory {
         return new ResponsavelJSONDAO();
     }
 
-    public static UserDAO getUserDao() {
-        return new UserJSONDAO();
-    }
-
+    public static LocalDAO getLocalDAO() {return new LocalJSONDAO();}
 }

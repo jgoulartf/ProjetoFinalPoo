@@ -12,8 +12,8 @@
       <entry name="!?*.clj" />
     </wildcardResourcePatterns>
     <bytecodeTargetLevel>
-      <module name="src_main" target="1.8" />
-      <module name="src_test" target="1.8" />
+      <module name="src_main" target="8" />
+      <module name="src_test" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

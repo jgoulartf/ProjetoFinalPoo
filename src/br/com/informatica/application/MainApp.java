@@ -1,19 +1,12 @@
 package br.com.informatica.application;
 
-import br.com.informatica.dao.ClienteJSONDAO;
-import br.com.informatica.dao.ListJsonDAO;
-import br.com.informatica.model.Cliente;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.LoadException;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Scanner;
 
 public class MainApp extends Application {
 
@@ -25,7 +18,7 @@ public class MainApp extends Application {
     public void start(Stage mainStage) throws Exception {
         MainApp.currentStage = mainStage;
 
-        MainApp.changePanel("../view/FXMLLogin.fxml", MainApp.WIDTH_SCREEN, MainApp.HEIGHT_SCREEN);
+        MainApp.changePanel("br/com/informatica/view/FXMLLogin.fxml", MainApp.WIDTH_SCREEN, MainApp.HEIGHT_SCREEN);
     }
 
     public static void changePanel(String fxmlResource, int width, int height) throws Exception {
@@ -43,6 +36,7 @@ public class MainApp extends Application {
             MainApp.getCurrentStage().centerOnScreen();
             MainApp.getCurrentStage().setTitle("INFORMÁTICA");
             MainApp.getCurrentStage().show();
+            System.out.println("eu estou aqui");
         }
         catch (Exception e) {
             e.printStackTrace();

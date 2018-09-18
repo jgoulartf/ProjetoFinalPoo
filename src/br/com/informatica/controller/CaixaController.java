@@ -14,10 +14,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 
+import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.*;
 
 public class CaixaController implements Initializable {
 
@@ -63,7 +65,6 @@ public class CaixaController implements Initializable {
     @FXML
     private void loadListView(boolean filter){
         List<Equipamento> equipamentos;
-        List<Cliente> clientes = daoCliente.load();
         if(!filter) {
             equipamentos = daoEquipamento.load();
         }
@@ -71,22 +72,107 @@ public class CaixaController implements Initializable {
             equipamentos = daoEquipamento.filter(searchEquipamentos.getText());
         }
         listViewEquipamentos.setItems(FXCollections.observableArrayList(equipamentos));
-        escolherCliente.setItems(FXCollections.observableArrayList(clientes));
+        escolherCliente.setItems(FXCollections.observableArrayList(daoCliente.load()));
     }
 
     @FXML
     private void adicionarProdutoCarrinho() {
-        Equipamento e = listViewEquipamentos.getSelectionModel().getSelectedItem();
 
-        e.setQuantidade(textFieldQuant.getText());
+        if( Integer.parseInt(textFieldQuant.getText()) <=
+                Integer.parseInt(listViewEquipamentos.getSelectionModel().getSelectedItem().getQuantidade())){
 
-        carrinho.addAll(listViewEquipamentos.getSelectionModel().getSelectedItems());
+            // Criando novo equipamento "e" para nao acessar a referencia do ListView e evitar a mudanca de valores no canto errado
+            Equipamento daLista = listViewEquipamentos.getSelectionModel().getSelectedItem();
+            Equipamento e = new Equipamento(daoEquipamento.generateId(), daLista.getNome(), daLista.getPeso(), daLista.getPreco(), daLista.getQuantidade(),
+                    daLista.getNumeroDeSerie(), daLista.getLocal(), daLista.getResponsavel());
 
-        if(carrinho != null) {
-            listViewCarrinho.setItems(FXCollections.observableArrayList(carrinho));
+
+            int quantidade1 = Integer.parseInt(listViewEquipamentos.getSelectionModel().getSelectedItem().quantidadeProperty().getValue());
+
+            int novaQuantidade = quantidade1 - Integer.parseInt(textFieldQuant.getText());
+            listViewEquipamentos.getSelectionModel().getSelectedItem().setQuantidade(String.valueOf(novaQuantidade));
+            listViewEquipamentos.refresh();
+
+            e.setQuantidade(textFieldQuant.getText());
+
+            carrinho.add(e);
+
+            if(carrinho != null) {
+                listViewCarrinho.setItems(FXCollections.observableArrayList(carrinho));
+            }
+
+            textFieldQuant.clear();
+        }
+        else {
+            Alert dialogoErro = new Alert(Alert.AlertType.WARNING);
+            dialogoErro.setTitle("QUANTIDADE EXCEDIDA");
+            dialogoErro.setHeaderText(null);
+            dialogoErro.setContentText("Quantidade de produtos não atendida pelo estoque");
+            dialogoErro.showAndWait();
+        }
+
+    }
+
+    @FXML
+    private void finalizarPedido() {
+        Cliente c = escolherCliente.getSelectionModel().getSelectedItem();
+        if( c == null) {
+            Alert dialogoErro = new Alert(Alert.AlertType.ERROR);
+            dialogoErro.setTitle("SEM ESCOLHA DE CLIENTE");
+            dialogoErro.setHeaderText(null);
+            dialogoErro.setContentText("Escolha o cliente responsável pela compra");
+        }
+        else if( carrinho.size() > 0 ) {
+
+            Alert dialogoErro = new Alert(Alert.AlertType.CONFIRMATION);
+            dialogoErro.setTitle("FINALIZAR PEDIDO");
+            dialogoErro.setHeaderText(null);
+            dialogoErro.setContentText("Deseja finalizar seu pedido e emitir a nota de venda?");
+            dialogoErro.showAndWait().ifPresent(response -> {
+                if( response == ButtonType.OK ) {
+                    // Salvando novos valores no arquivo JSON
+                    daoEquipamento.store(listViewEquipamentos.getItems());
+                    emitirNotaDeVenda();
+                    System.out.println("Entrei no teste!");
+                }
+            });
+
+        }
+        else {
+            Alert dialogoErro = new Alert(Alert.AlertType.WARNING);
+            dialogoErro.setTitle("CARRINHO VAZIO");
+            dialogoErro.setHeaderText(null);
+            dialogoErro.setContentText("Adicione mais produtos no carrinho!");
+            dialogoErro.showAndWait();
         }
     }
 
+    private void emitirNotaDeVenda() {
+        double precoTotal = 0.0;
+        String notaTxt;
+
+        Path STORAGE_FILE = Paths.get("out//production//ProjetoFinalPoo//br//com//informatica//nota");
+
+        // Calculando preco total
+        for(Equipamento e: carrinho) {
+            precoTotal += Double.parseDouble(e.getPreco()) * Double.parseDouble(e.getQuantidade());
+        }
+
+        NotaDeVenda nota = new NotaDeVenda(escolherCliente.getSelectionModel().getSelectedItem(), new Date(), carrinho);
+
+        try {
+            Files.write(STORAGE_FILE, nota.toString().getBytes());
+            System.out.println("Escrevi no arquivo!");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @FXML
+    private void onSearch() {
+        loadListView(true);
+    }
 
     private void bindListViewEstoque(Equipamento e) {
         if(e != null) {
@@ -104,44 +190,6 @@ public class CaixaController implements Initializable {
 
     }
 
-    @FXML
-    private void finalizarPedido() {
-
-        if( carrinho.size() > 0 ) {
-
-            Alert dialogoErro = new Alert(Alert.AlertType.CONFIRMATION);
-            dialogoErro.setTitle("FINALIZAR PEDIDO");
-            dialogoErro.setHeaderText(null);
-            dialogoErro.setContentText("Deseja finalizar seu pedido e emitir a nota de venda?");
-            dialogoErro.showAndWait().ifPresent(response -> {
-                if( response == ButtonType.OK ) {
-                    //emitirNotaDeVenda();
-                    System.out.println("Entrei no teste!");
-                }
-            });
-
-        }
-        else {
-            Alert dialogoErro = new Alert(Alert.AlertType.WARNING);
-            dialogoErro.setTitle("CARRINHO VAZIO");
-            dialogoErro.setHeaderText(null);
-            dialogoErro.setContentText("Adicione mais produtos no carrinho!");
-            dialogoErro.showAndWait();
-        }
-    }
-
-    private void emitirNotaDeVenda() {
-
-        NotaDeVenda nota = new NotaDeVenda();
-
-
-    }
-
-    @FXML
-    private void onSearch() {
-        loadListView(true);
-    }
-
     public void setChangePanelCliente() throws Exception{
         ChangePanelController.setChangePanelCliente();
     }
@@ -153,4 +201,9 @@ public class CaixaController implements Initializable {
     public void setChangePanelResponsavel() throws Exception{
         ChangePanelController.setChangePanelResponsavel();
     }
+
+    public void setChangePanelLocal() throws Exception {
+        ChangePanelController.setChangePanelLocal();
+    }
+
 }

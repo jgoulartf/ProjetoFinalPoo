@@ -2,9 +2,7 @@ package br.com.informatica.controller;
 
 import br.com.informatica.application.MainApp;
 import br.com.informatica.dao.ClienteDAO;
-import br.com.informatica.dao.ClienteJSONDAO;
 import br.com.informatica.dao.DAOFactory;
-import br.com.informatica.dao.ListJsonDAO;
 import br.com.informatica.model.Cliente;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTextField;
@@ -13,7 +11,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -97,6 +94,7 @@ public class ClienteController implements Initializable {
         listViewClientes.getSelectionModel().clearSelection();
         resetFieldsValues();
     }
+
     @FXML
     private void deletarCliente() {
         dao.delete(listViewClientes.getSelectionModel().selectedItemProperty().get().getId());
@@ -106,6 +104,16 @@ public class ClienteController implements Initializable {
 
     public void sair() throws Exception {
         MainApp.changePanel("../view/FXMLLogin.fxml", MainApp.getWidthScreen(), MainApp.getHeightScreen());
+    }
+
+    private Cliente passFieldsValues() {
+        return new Cliente(dao.generateId(), tfNome.getText(), tfEndereco.getText(), tfCpf.getText());
+    }
+
+    private void resetFieldsValues() {
+        tfNome.clear();
+        tfEndereco.clear();
+        tfCpf.clear();
     }
 
     public void setChangePanelCaixa() throws Exception{
@@ -120,14 +128,8 @@ public class ClienteController implements Initializable {
         ChangePanelController.setChangePanelResponsavel();
     }
 
-    private Cliente passFieldsValues() {
-        return new Cliente(dao.generateId(), tfNome.getText(), tfEndereco.getText(), tfCpf.getText());
-    }
-
-    private void resetFieldsValues() {
-        tfNome.clear();
-        tfEndereco.clear();
-        tfCpf.clear();
+    public void setChangePanelLocal() throws Exception {
+        ChangePanelController.setChangePanelLocal();
     }
 
 }

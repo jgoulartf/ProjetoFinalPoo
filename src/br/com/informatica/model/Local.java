@@ -1,26 +1,54 @@
 package br.com.informatica.model;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 public class Local {
     // Attributes
-    private int codigoDaPrateleira;
-    private int numeroDaSessao;
+    private int id;
+    private StringProperty codigoDaPrateleira = new SimpleStringProperty();
+    private StringProperty numeroDaSessao = new SimpleStringProperty();
 
-    public Local(int codigoDaPrateleira, int numeroDaSessao) {
-        this.codigoDaPrateleira = codigoDaPrateleira;
-        this.numeroDaSessao = numeroDaSessao;
+    public Local(){}
+
+    public Local(int id, String codigoDaPrateleira, String numeroDaSessao) {
+        setId(id);
+        setCodigoDaPrateleira(codigoDaPrateleira);
+        setNumeroDaSessao(numeroDaSessao);
     }
 
-    public int getCodigoDaPrateleira() { return codigoDaPrateleira; }
-
-    public void setCodigoDaPrateleira(int codigoDaPrateleira) {
-        this.codigoDaPrateleira = codigoDaPrateleira;
+    public int getId() {
+        return id;
     }
 
-    public int getNumeroDaSessao() {
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getCodigoDaPrateleira() {
+        return codigoDaPrateleira.get();
+    }
+
+    public StringProperty codigoDaPrateleiraProperty() {
+        return codigoDaPrateleira;
+    }
+
+    public void setCodigoDaPrateleira(String codigoDaPrateleira) {
+        this.codigoDaPrateleira.set(codigoDaPrateleira);
+    }
+
+    public String getNumeroDaSessao() {
+        return numeroDaSessao.get();
+    }
+
+    public StringProperty numeroDaSessaoProperty() {
         return numeroDaSessao;
     }
 
-    public void setNumeroDaSessao(int numeroDaSessao) {
-        this.numeroDaSessao = numeroDaSessao;
+    public void setNumeroDaSessao(String numeroDaSessao) {
+        this.numeroDaSessao.set(numeroDaSessao);
     }
+
+    @Override
+    public String toString() { return "Prateleira: " + this.getCodigoDaPrateleira() + " | " + "Sessão: " + this.getNumeroDaSessao(); }
 }

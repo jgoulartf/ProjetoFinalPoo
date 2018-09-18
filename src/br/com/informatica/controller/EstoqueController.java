@@ -3,19 +3,17 @@ package br.com.informatica.controller;
 import br.com.informatica.application.MainApp;
 import br.com.informatica.dao.DAOFactory;
 import br.com.informatica.dao.EquipamentoDAO;
-import br.com.informatica.model.Cliente;
+import br.com.informatica.dao.LocalDAO;
+import br.com.informatica.dao.ResponsavelDAO;
 import br.com.informatica.model.Equipamento;
 import br.com.informatica.model.Local;
 import br.com.informatica.model.Responsavel;
+import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.util.StringConverter;
-import javafx.util.converter.DoubleStringConverter;
-import javafx.util.converter.IntegerStringConverter;
-import javafx.util.converter.NumberStringConverter;
 
 import java.net.URL;
 import java.util.List;
@@ -23,7 +21,11 @@ import java.util.ResourceBundle;
 
 public class EstoqueController implements Initializable {
 
-    private EquipamentoDAO dao = DAOFactory.getEquipamentoDAO();
+    private EquipamentoDAO daoEquipamento = DAOFactory.getEquipamentoDAO();
+
+    private LocalDAO daoLocal = DAOFactory.getLocalDAO();
+
+    private ResponsavelDAO daoResponsavel = DAOFactory.getResponsavelDAO();
 
     @FXML JFXTextField searchEquipamentos;
 
@@ -39,13 +41,9 @@ public class EstoqueController implements Initializable {
 
     @FXML JFXTextField tfNumeroDeSerie;
 
-    @FXML JFXTextField tfLocal;
+    @FXML JFXComboBox<Local> comboBoxLocal;
 
-    @FXML JFXTextField tfResponsavel;
-
-//    private StringConverter<Number> numberToString = new NumberStringConverter();
-//    private StringConverter<Double> doubleToString = new DoubleStringConverter();
-//    private StringConverter<Integer> integerToString = new IntegerStringConverter();
+    @FXML JFXComboBox<Responsavel> comboBoxResponsavel;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -59,15 +57,24 @@ public class EstoqueController implements Initializable {
             unBindListView(oldValue);
             bindListView(newValue);
         });
+
+        List<Local> locais = daoLocal.load();
+        List<Responsavel> responsaveis = daoResponsavel.load();
+
+        if( locais != null && responsaveis != null ) {
+            comboBoxLocal.setItems(FXCollections.observableArrayList(daoLocal.load()));
+            comboBoxResponsavel.setItems(FXCollections.observableArrayList(daoResponsavel.load()));
+        }
+
     }
 
     private void loadListView(boolean filter){
         List<Equipamento> equipamentos;
         if(!filter) {
-            equipamentos = dao.load();
+            equipamentos = daoEquipamento.load();
         }
         else {
-            equipamentos = dao.filter(searchEquipamentos.getText());
+            equipamentos = daoEquipamento.filter(searchEquipamentos.getText());
         }
         listViewEquipamentos.setItems(FXCollections.observableArrayList(equipamentos));
     }
@@ -103,11 +110,11 @@ public class EstoqueController implements Initializable {
     @FXML
     public void cadastrarEquipamento() {
 
-        List<Equipamento> equipamentos = dao.load();
+        List<Equipamento> equipamentos = daoEquipamento.load();
 
         equipamentos.add( passFieldsValues() );
 
-        dao.store(equipamentos);
+        daoEquipamento.store(equipamentos);
         resetFieldsValues();
         loadListView(false);
     }
@@ -115,16 +122,32 @@ public class EstoqueController implements Initializable {
 
     @FXML
     private void atualizarEquipamento() {
-        dao.store(listViewEquipamentos.getItems());
+        daoEquipamento.store(listViewEquipamentos.getItems());
         listViewEquipamentos.getSelectionModel().clearSelection();
         resetFieldsValues();
     }
 
     @FXML
     private void deletarEquipamento() {
-        dao.delete(listViewEquipamentos.getSelectionModel().selectedItemProperty().get().getId());
+        daoEquipamento.delete(listViewEquipamentos.getSelectionModel().selectedItemProperty().get().getId());
         loadListView(false);
         resetFieldsValues();
+    }
+
+    private Equipamento passFieldsValues() {
+        // Gerando o novo equipamento
+        return new Equipamento(daoEquipamento.generateId(), tfNome.getText(), tfPeso.getText(),
+                tfPreco.getText(), tfQuantidade.getText(), tfNumeroDeSerie.getText(), comboBoxLocal.getValue(), comboBoxResponsavel.getValue());
+    }
+
+    private void resetFieldsValues() {
+        tfNome.clear();
+        tfPeso.clear();
+        tfPreco.clear();
+        tfQuantidade.clear();
+        tfNumeroDeSerie.clear();
+        comboBoxResponsavel.getSelectionModel().clearSelection();
+        comboBoxLocal.getSelectionModel().clearSelection();
     }
 
     public void setChangePanelCaixa() throws Exception{
@@ -139,22 +162,12 @@ public class EstoqueController implements Initializable {
         ChangePanelController.setChangePanelResponsavel();
     }
 
-    private Equipamento passFieldsValues() {
-        // Gerando o novo equipamento, sem os campos local e responsavel.
-        Responsavel responsavel = new Responsavel("Joao", "Vingt-Rosado", "(84) 99692-5674");
-        Local local = new Local(123, 456);
-
-
-        return new Equipamento(dao.generateId(), tfNome.getText(), tfPeso.getText(),
-                tfPreco.getText(), tfQuantidade.getText(), tfNumeroDeSerie.getText(), local, responsavel);
+    public void setChangePanelLocal() throws Exception{
+        ChangePanelController.setChangePanelLocal();
     }
 
-    private void resetFieldsValues() {
-        tfNome.clear();
-        tfPeso.clear();
-        tfPreco.clear();
-        tfQuantidade.clear();
-        tfNumeroDeSerie.clear();
+    public void setChangePanelEstoque() throws Exception{
+        ChangePanelController.setChangePanelEstoque();
     }
 
     public void sair() throws Exception {
