@@ -1,3 +1,0 @@
-COMO RODAR
-
-Linkar os *.jar(GSON E JFOENIX) ao projeto, eles se encontram na raiz do projeto

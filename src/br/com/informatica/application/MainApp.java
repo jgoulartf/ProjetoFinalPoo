@@ -18,7 +18,7 @@ public class MainApp extends Application {
     public void start(Stage mainStage) throws Exception {
         MainApp.currentStage = mainStage;
 
-        MainApp.changePanel("br/com/informatica/view/FXMLLogin.fxml", MainApp.WIDTH_SCREEN, MainApp.HEIGHT_SCREEN);
+        MainApp.changePanel("../view/FXMLLogin.fxml", MainApp.WIDTH_SCREEN, MainApp.HEIGHT_SCREEN);
     }
 
     public static void changePanel(String fxmlResource, int width, int height) throws Exception {
