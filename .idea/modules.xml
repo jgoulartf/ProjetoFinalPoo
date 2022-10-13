@@ -3,8 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ProjetoFinalPoo.iml" filepath="$PROJECT_DIR$/ProjetoFinalPoo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/src_main.iml" filepath="$PROJECT_DIR$/.idea/modules/src_main.iml" group="src" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/src_test.iml" filepath="$PROJECT_DIR$/.idea/modules/src_test.iml" group="src" />
     </modules>
   </component>
 </project>

@@ -7,6 +7,8 @@ import br.com.informatica.model.Cliente;
 import br.com.informatica.model.Equipamento;
 import br.com.informatica.model.NotaDeVenda;
 import com.jfoenix.controls.*;
+
+
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
